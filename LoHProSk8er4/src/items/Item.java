@@ -1,4 +1,4 @@
-package items;
+package Items;
 
 public abstract class Item {
 	//item's name -kb
@@ -18,6 +18,7 @@ public abstract class Item {
 		this.rarity = rarity;
 		
 	}
+	
 	//get item's name, worth, description, and rarity -kb
 	public String getName() {return name;}
 	public int getWorth() {return worth;}
