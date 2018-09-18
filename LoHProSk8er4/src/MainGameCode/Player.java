@@ -1,8 +1,8 @@
 package mainGameCode;
 import java.util.ArrayList;
 
-import items.Equipment;
-import items.Item;
+import Items.Equipment;
+import Items.Item;
 
 public class Player {
 
