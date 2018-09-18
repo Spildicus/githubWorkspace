@@ -11,7 +11,7 @@ public abstract class Item {
 	private String rarity;
 	
 	//dummy item -kb
-	Item(String name, int worth, String desription, String rarity){
+	Item(String name, int worth, String description, String rarity){
 		this.name = name;
 		this.worth = worth;
 		this.description = description;

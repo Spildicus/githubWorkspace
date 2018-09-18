@@ -1,8 +1,8 @@
 package mainGameCode;
-import java.util.ArrayList;
 
+import items.BigBoySword;
 import items.Equipment;
-import items.Item;
+import items.TornGloves;
 
 public class Player {
 
@@ -27,13 +27,13 @@ public class Player {
 	//wisdom stat, will effect melee damage (multiplier) -kb
 	private int wisdom; 
 	
-	//backpack
-	private ArrayList<Item> equipment, consumable, misc;
+	private Backpack backpack;
 	//equipment order: head, torso, arms, waist, legs, weapon, offHand -kb
 	private Equipment[] equipped;
 	 
 
 	public Player(String name){ //dummy character -kb	
+		
 		this.setName(name);
 		setLevel(1);
 		setXp(0);
@@ -47,6 +47,11 @@ public class Player {
 		setIntelligence(5);
 		setStrength(5);
 		setWisdom(5);
+		
+		setBackpack(new Backpack(20));
+		
+		backpack.addItem(new BigBoySword());
+		backpack.addItem(new TornGloves());
 		
 	}
 
@@ -178,6 +183,26 @@ public class Player {
 
 	public void setWisdom(int wisdom) {
 		this.wisdom = wisdom;
+	}
+
+
+	public Backpack getBackpack() {
+		return backpack;
+	}
+
+
+	public void setBackpack(Backpack backpack) {
+		this.backpack = backpack;
+	}
+
+
+	public Equipment[] getEquipped() {
+		return equipped;
+	}
+
+
+	public void setEquipped(Equipment[] equipped) {
+		this.equipped = equipped;
 	}
 	
 }

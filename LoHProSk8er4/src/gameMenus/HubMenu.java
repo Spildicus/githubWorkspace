@@ -28,7 +28,7 @@ public class HubMenu extends Menu{
 		TextHandler.createNewList(new String[] {"Continue Journey", "Inventory", "Status", "Save and Exit"});
 		setPlayerInput(InputHandler.getInput());
 		if(getPlayerInput().contains("1")); //continue journey, or advance through quest
-		if(getPlayerInput().contains("2")); //open inventory menu
+		if(getPlayerInput().contains("2")) GameController.addMenu(new InventoryMenu());; //open inventory menu
 		if(getPlayerInput().contains("3")); //check character status
 		if(getPlayerInput().contains("4")) saveAndExit(); //save and exit game
 	}
