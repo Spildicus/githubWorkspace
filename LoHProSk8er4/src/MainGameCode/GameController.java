@@ -1,14 +1,17 @@
-import java.util.ArrayList;
+package MainGameCode;
 import java.util.LinkedList;
-import java.util.List;
+
+import gameMenus.MainMenu;
+import gameMenus.Menu;
 
 
 public class GameController {
 
 	//private Player player;
-	private LinkedList<Menu> menus;
+	private static LinkedList<Menu> menus;
 	private static boolean isExit; 
 	
+	private static Player player;
 	//input scanner
 
 	
@@ -28,7 +31,7 @@ public class GameController {
 	public void update()
 	{
 		
-		menus.getFirst().update();
+		menus.getLast().update();
 		
 	}
 	
@@ -44,5 +47,17 @@ public class GameController {
 		return isExit;
 	}
 	
+	public static void addMenu(Menu m)
+	{
+		menus.add(m);
+	}
+
+	public static Player getPlayer() {
+		return player;
+	}
+
+	public static void setPlayer(Player player) {
+		GameController.player = player;
+	}
 	
 }

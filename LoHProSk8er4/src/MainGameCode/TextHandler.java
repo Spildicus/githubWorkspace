@@ -1,10 +1,8 @@
-import java.util.ArrayList;
+package MainGameCode;
 
 public class TextHandler {
 		
 	private static String text = "";
-	
-	private static ArrayList<String> menuList = new ArrayList<String>(10);
 	
 	//maximum string length in console before new line is created
 	private static int maxCharLength = 100;

@@ -1,6 +1,7 @@
+package MainGameCode;
 import java.util.ArrayList;
 
-import Items.Item;
+import items.Item;
 public abstract class Enemy {
 	
 	//enemy's name -kb

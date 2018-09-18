@@ -1,3 +1,4 @@
+package MainGameCode;
 import java.util.Scanner;
 
 public class InputHandler {
