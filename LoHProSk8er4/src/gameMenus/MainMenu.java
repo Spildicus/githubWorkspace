@@ -1,7 +1,7 @@
 package gameMenus;
-import MainGameCode.GameController;
-import MainGameCode.InputHandler;
-import MainGameCode.TextHandler;
+import mainGameCode.GameController;
+import mainGameCode.InputHandler;
+import mainGameCode.TextHandler;
 
 public class MainMenu extends Menu{
 	

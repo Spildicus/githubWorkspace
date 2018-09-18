@@ -1,5 +1,5 @@
 package gameMenus;
-import MainGameCode.TextHandler;
+import mainGameCode.TextHandler;
 
 //this is an abstract class used as a stencil for each menu
 

@@ -1,4 +1,4 @@
-package MainGameCode;
+package mainGameCode;
 import java.util.LinkedList;
 
 import gameMenus.MainMenu;
