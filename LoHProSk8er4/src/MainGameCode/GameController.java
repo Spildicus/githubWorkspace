@@ -12,6 +12,7 @@ public class GameController {
 	private static boolean isExit; 
 	
 	private static Player player;
+	private static int layer = 1; //represents the 'layer' the player is currently on
 	//input scanner
 
 	
@@ -31,8 +32,15 @@ public class GameController {
 	public void update()
 	{
 		
-		menus.getLast().update();
+		menus.getFirst().update();
 		
+	}
+	
+	
+	public static void pollMenu(Menu m)
+	{
+		menus.removeFirst();
+		addMenu(m);
 	}
 	
 	//set if the game is going to exit at the end of the next update loop
@@ -49,7 +57,7 @@ public class GameController {
 	
 	public static void addMenu(Menu m)
 	{
-		menus.add(m);
+		menus.addFirst(m);
 	}
 
 	public static Player getPlayer() {
@@ -58,6 +66,14 @@ public class GameController {
 
 	public static void setPlayer(Player player) {
 		GameController.player = player;
+	}
+
+	public static int getLayer() {
+		return layer;
+	}
+
+	public static void setLayer(int layer) {
+		GameController.layer = layer;
 	}
 	
 }

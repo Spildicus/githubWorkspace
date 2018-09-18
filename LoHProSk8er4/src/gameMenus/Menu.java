@@ -28,5 +28,15 @@ public abstract class Menu {
 	public String getPlayerInput() {return playerInput;}
 
 	public void setPlayerInput(String playerInput) {this.playerInput = playerInput;}
+	
+	public String getTitle()
+	{
+		return title;
+	}
+	
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
 
 }

@@ -23,7 +23,11 @@ public class NewGameMenu extends Menu{
 		TextHandler.displayText("Welcome, " + player.getName() + ", to Layers of Hell Pro Sk8er 4. You will be tested on your might, and your ability to fucking understand what the fuck is going on most of the time for the duration of this game. Good fucking luck.\n");
 		TextHandler.createNewList(new String[] {"Damn ok", "no fuk u"});
 		setPlayerInput(InputHandler.getInput());
-		if(getPlayerInput().contains("1")); //continue to main game
+		if(getPlayerInput().contains("1")) 
+		{
+			GameController.setPlayer(player); //add player to game
+			GameController.pollMenu(new HubMenu()); //continue to main game
+		}
 		if(getPlayerInput().contains("2"))
 		{
 			TextHandler.displayText("Well ok, bye then :(\n");
