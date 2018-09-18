@@ -6,7 +6,7 @@ public class Player {
 	//player's level -kb
 	private int level;
 	//current and max xp -kb
-	private int xp, maxXp
+	private int xp, maxXp;
 	//current and max health -kb
 	private int health, maxHealth; 
 	//current and max mana -kb
@@ -23,6 +23,8 @@ public class Player {
 	Player(){ //dummy character -kb
 		name = "Chicken";
 		level = 1;
+		xp = 0;
+		maxXp = 100;
 		health = 100;
 		maxHealth =	100;	
 		mana = 50;
