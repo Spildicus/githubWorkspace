@@ -14,6 +14,14 @@ public class ItemCollection {
 	{
 		//master list of all consumable/miscellaneous items in the game
 		//sorted by NAME, VALUE, DESCRIPTION
+		/*
+		 * master list of all consumable/miscellaneous items in the game
+		 * 
+		 * to add a new item to the game, add the item to the itemCollections, and if it is a consumable,
+		 * add the effect to the useItem method in the switch statement. If it has no effect, don't add anything.
+		 * 
+		 * sorted by NAME, VALUE, DESCRIPTION
+		 */
 		itemCollections.add(new Item("Polar Pop", 1, "Do you ever drink water?"));
 		itemCollections.add(new Item("Klondike Bar", 20, "What would you do for this?"));
 	}
@@ -50,7 +58,7 @@ public class ItemCollection {
 			TextHandler.displayText("What would you dooOOOoooo, for a klondike bar? Ha. You restored 50 HP.");
 			break;
 			default:
-				TextHandler.displayText("No Such Item: " + name);
+				TextHandler.displayText("There is no use for " + name + ".");
 		}
 	}
 	
