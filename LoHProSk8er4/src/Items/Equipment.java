@@ -1,4 +1,4 @@
-
+package Items;
 public class Equipment extends Item {
 
 	//item's type (e.g head, torso, arms, waist, legs, weapon, offHand) -kb
@@ -7,4 +7,14 @@ public class Equipment extends Item {
 	private int defense;
 	//equipment's damage value (e.g weapon damage = 970 ) -kb
 	private int damage;
+
+	Equipment(String name, int worth, String desription, String rarity, 
+			String type, int defense, int damage){
+		super(name, worth, desription, rarity);
+		this.type = type;
+		this.defense = defense;
+		this.damage = damage;
+	}
+
 }
+

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+
+import Items.Item;
 public abstract class Enemy {
 	
 	//enemy's name -kb

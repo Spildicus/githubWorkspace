@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+
+import Items.Equipment;
+import Items.Item;
 
 public class Player {
 
@@ -5,6 +9,8 @@ public class Player {
 	private String name; 
 	//player's level -kb
 	private int level;
+	//player's current defense, as equipped -kb
+	private int defense;
 	//current and max xp -kb
 	private int xp, maxXp;
 	//current and max health -kb
@@ -19,6 +25,11 @@ public class Player {
 	private int strength;
 	//wisdom stat, will effect melee damage (multiplier) -kb
 	private int wisdom; 
+	
+	//backpack
+	private ArrayList<Item> equipment, consumable, misc;
+	//equipment order: head, torso, arms, waist, legs, weapon, offHand -kb
+	private Equipment[] equipped;
 	
 	Player(){ //dummy character -kb
 		name = "Big Minion";
@@ -37,4 +48,5 @@ public class Player {
 				
 		
 	}
+	
 }
