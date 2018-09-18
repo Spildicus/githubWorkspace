@@ -30,9 +30,10 @@ public class Player {
 	private ArrayList<Item> equipment, consumable, misc;
 	//equipment order: head, torso, arms, waist, legs, weapon, offHand -kb
 	private Equipment[] equipped;
-	
-	Player(){ //dummy character -kb
-		name = "Big Minion";
+	 
+
+	Player(String name){ //dummy character -kb	
+		this.name = name;
 		level = 1;
 		xp = 0;
 		maxXp = 100;
@@ -45,7 +46,6 @@ public class Player {
 		intelligence = 5;
 		strength = 5;
 		wisdom = 5;
-				
 		
 	}
 	

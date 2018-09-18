@@ -1,30 +1,39 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class GameController {
 
 	//private Player player;
-	//private Menu menu;
-	private boolean isExit; 
+	private LinkedList<Menu> menus;
+	private static boolean isExit; 
 	
 	//input scanner
-	private Scanner in;
+
 	
 	//set isExit to false and start the scanner
 	GameController()
 	{
 		isExit = false;
-		in = new Scanner(System.in);
+
+		
+		//initialize linkedlist for menus
+		menus = new LinkedList<Menu>();
+		//add menus to list (in this case just the main menu
+		menus.add(new MainMenu());
 	}
 	
 	//used to update all aspects of the game
 	public void update()
 	{
-		TextHandler.displayText("Enter Input: ");
-		getInput();
+		
+		menus.getFirst().update();
+		
 	}
 	
 	//set if the game is going to exit at the end of the next update loop
-	public void setIsExit(boolean set)
+	public static void setIsExit(boolean set)
 	{
 		isExit = set;
 	}
@@ -35,10 +44,5 @@ public class GameController {
 		return isExit;
 	}
 	
-	//get player input
-	public String getInput()
-	{
-		return in.nextLine();
-	}
 	
 }
