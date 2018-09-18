@@ -20,14 +20,8 @@ public class Player {
 	//wisdom stat, will effect melee damage (multiplier) -kb
 	private int wisdom; 
 	
-<<<<<<< HEAD
-	Player(String name){ //dummy character -kb
-		
+	Player(String name){ //dummy character -kb	
 		this.name = name;
-=======
-	Player(){ //dummy character -kb
-		name = "Big Minion";
->>>>>>> a7f69b3eb18cc4b3785a391dc2295a26bcdd9d71
 		level = 1;
 		xp = 0;
 		maxXp = 100;
