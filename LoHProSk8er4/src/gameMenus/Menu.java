@@ -20,7 +20,7 @@ public abstract class Menu {
 	
 	protected void displayTitle()
 	{
-		TextHandler.displayText("------------------------------\n");
+		TextHandler.displayText("\n------------------------------\n");
 		TextHandler.displayText(this.title + "\n");
 		TextHandler.displayText("------------------------------\n");
 	}

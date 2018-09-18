@@ -1,9 +1,5 @@
 package mainGameCode;
 
-import items.BigBoySword;
-import items.Equipment;
-import items.TornGloves;
-
 public class Player {
 
 	//player's name -kb
@@ -29,7 +25,7 @@ public class Player {
 	
 	private Backpack backpack;
 	//equipment order: head, torso, arms, waist, legs, weapon, offHand -kb
-	private Equipment[] equipped;
+	//private Equipment[] equipped;
 	 
 
 	public Player(String name){ //dummy character -kb	
@@ -38,7 +34,7 @@ public class Player {
 		setLevel(1);
 		setXp(0);
 		setMaxXp(100);
-		setHealth(100);
+		setHealth(20);
 		setMaxHealth(100);	
 		setMana(50);
 		setMaxMana(50);
@@ -50,8 +46,8 @@ public class Player {
 		
 		setBackpack(new Backpack(20));
 		
-		backpack.addItem(new BigBoySword());
-		backpack.addItem(new TornGloves());
+		backpack.addItem("Polar Pop");
+		backpack.addItem("Klondike Bar");
 		
 	}
 
@@ -113,6 +109,11 @@ public class Player {
 
 	public void setHealth(int health) {
 		this.health = health;
+	}
+	
+	public void addHealth(int add) {
+		if(health + add >= maxHealth) health = maxHealth;
+		else health += add;
 	}
 
 
@@ -195,7 +196,7 @@ public class Player {
 		this.backpack = backpack;
 	}
 
-
+/*
 	public Equipment[] getEquipped() {
 		return equipped;
 	}
@@ -203,6 +204,6 @@ public class Player {
 
 	public void setEquipped(Equipment[] equipped) {
 		this.equipped = equipped;
-	}
+	}*/
 	
 }

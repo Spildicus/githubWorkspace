@@ -1,21 +1,18 @@
 package items;
 
-public abstract class Item {
+public class Item {
 	//item's name -kb
 	private String name;
 	//item's selling value -kb
 	private int worth;
 	//description of item -kb
 	private String description; 
-	//items rarity -kb
-	private String rarity;
 	
 	//dummy item -kb
-	Item(String name, int worth, String description, String rarity){
+	Item(String name, int worth, String description){
 		this.name = name;
 		this.worth = worth;
 		this.description = description;
-		this.rarity = rarity;
 		
 	}
 	
@@ -23,7 +20,6 @@ public abstract class Item {
 	public String getName() {return name;}
 	public int getWorth() {return worth;}
 	public String getDescription() {return description;}
-	public String getRarity() {return rarity;}
-	
+
 	
 }

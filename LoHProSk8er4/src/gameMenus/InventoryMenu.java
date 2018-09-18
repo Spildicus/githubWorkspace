@@ -12,7 +12,6 @@ import mainGameCode.TextHandler;
 public class InventoryMenu extends Menu{
 
 	private int pageNum;
-	private String[] page = {"Equipment", "Misc"};
 	
 	private Player player;
 	private ArrayList<Equipment> equipment;
@@ -33,22 +32,33 @@ public class InventoryMenu extends Menu{
 	{
 		if(pageNum == 0)
 		{
-			setTitle("Inventory - Equipment");
+			setTitle("Inventory - Misc");
 			displayTitle();
 			
 			int counter = 1;
-			for (Equipment eq : equipment)
+			for (Item i : misc)
 			{
 				if(counter % 2 != 0)
-					TextHandler.displayText("(" + counter + ") " + eq.getName() + "\t");
+					TextHandler.displayText("(" + counter + ") " + i.getName() + "\t");
 				else
-					TextHandler.displayText("(" + counter + ") " + eq.getName() + "\n");
+					TextHandler.displayText("(" + counter + ") " + i.getName() + "\n");
 				counter++;
 			}
-
+			
+			TextHandler.displayText("\n(" + counter + ") Back\n");
+			
+			int selection = InputHandler.getIntegerInput();
+			
+			if(selection == counter)
+				GameController.exitMenu();
+			else
+				player.getBackpack().useItem(selection);
+			
+			//check if the player input a number that's displayed on the list
+			
 		}
 		
-		InputHandler.getInput();
+		
 		
 	}
 	

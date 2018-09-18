@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import gameMenus.MainMenu;
 import gameMenus.Menu;
 
-
 public class GameController {
 
 	//private Player player;
@@ -13,14 +12,12 @@ public class GameController {
 	
 	private static Player player;
 	private static int layer = 1; //represents the 'layer' the player is currently on
-	//input scanner
-
 	
+
 	//set isExit to false and start the scanner
 	GameController()
 	{
 		isExit = false;
-
 		
 		//initialize linkedlist for menus
 		menus = new LinkedList<Menu>();
@@ -36,11 +33,16 @@ public class GameController {
 		
 	}
 	
-	
+	//used when you want to exit a menu and replace it with a new one
 	public static void pollMenu(Menu m)
 	{
 		menus.removeFirst();
 		addMenu(m);
+	}
+	
+	public static void exitMenu()
+	{
+		menus.removeFirst();
 	}
 	
 	//set if the game is going to exit at the end of the next update loop
@@ -55,6 +57,7 @@ public class GameController {
 		return isExit;
 	}
 	
+	//adds a menu to the queue
 	public static void addMenu(Menu m)
 	{
 		menus.addFirst(m);
