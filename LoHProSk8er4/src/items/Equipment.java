@@ -1,4 +1,4 @@
-package Items;
+package items;
 public class Equipment extends Item {
 
 	//item's type (e.g head, torso, arms, legs, feet, weapon, offHand) -kb
