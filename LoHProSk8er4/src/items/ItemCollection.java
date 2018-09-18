@@ -3,6 +3,7 @@ package items;
 import java.util.ArrayList;
 
 import mainGameCode.GameController;
+import mainGameCode.Player;
 import mainGameCode.TextHandler;
 
 public class ItemCollection {
@@ -22,8 +23,15 @@ public class ItemCollection {
 		 * 
 		 * sorted by NAME, VALUE, DESCRIPTION
 		 */
+		
+		//CONSUMABLES
 		itemCollections.add(new Item("Polar Pop", 1, "Do you ever drink water?"));
 		itemCollections.add(new Item("Klondike Bar", 20, "What would you do for this?"));
+		itemCollections.add(new Item("Big tiddy goth GF", 666, "Vore."));
+		
+		//MISC, i.e. NO STATUS EFFECT
+		itemCollections.add(new Item("Sippy Cup", 9, "Somebody otta get their child their sippy cup back."));
+
 	}
 	
 	//search and return an item from the item collection
@@ -46,17 +54,27 @@ public class ItemCollection {
 	public void useItem(Item i)
 	{
 		String name = i.getName();
+		Player player = GameController.getPlayer();
 		
 		switch(name)
 		{
 		case "Polar Pop":
-			GameController.getPlayer().addHealth(30);
+			player.addHealth(30);
 			TextHandler.displayText("Mmm, tastes like root beer. You restored 30 HP.");
 			break;
+			
 		case "Klondike Bar":
-			GameController.getPlayer().addHealth(50);
+			player.addHealth(50);
 			TextHandler.displayText("What would you dooOOOoooo, for a klondike bar? Ha. You restored 50 HP.");
 			break;
+			
+		case "Big tiddy goth GF":
+			player.setHealth(player.getMaxHealth());
+			player.setMana(player.getMaxMana());
+			player.setXp(player.getMaxXp());
+			TextHandler.displayText("Very scrumptious. You have regained all life and mana, and have even gained a new level");
+			break;
+			
 			default:
 				TextHandler.displayText("There is no use for " + name + ".");
 		}
