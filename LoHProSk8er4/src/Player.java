@@ -21,7 +21,7 @@ public class Player {
 	private int wisdom; 
 	
 	Player(){ //dummy character -kb
-		name = "Chicken";
+		name = "Big Minion";
 		level = 1;
 		xp = 0;
 		maxXp = 100;
