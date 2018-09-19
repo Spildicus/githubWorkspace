@@ -1,5 +1,8 @@
 package mainGameCode;
 
+import items.Equipment;
+import items.ItemCollection;
+
 public class Player {
 
 	//player's name -kb
@@ -24,8 +27,14 @@ public class Player {
 	private int wisdom; 
 	
 	private Backpack backpack;
-	//equipment order: head, torso, arms, waist, legs, weapon, offHand -kb
-	//private Equipment[] equipped;
+	//equipment order: (0)head, (1)torso, (2)arms, (3)legs, (4)weapon, (5)offHand -kb
+	private Equipment[] equipped = {new Equipment("EMPTY", 0, "", "HEAD", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "TORSO", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "ARMS", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "LEGS", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "FEET", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "WEAPON", 0, 0, 0, 0, 0, 0),
+			new Equipment("EMPTY", 0, "", "OFFHAND", 0, 0, 0, 0, 0, 0)};
 	 
 
 	public Player(String name){ //dummy character -kb	
@@ -50,6 +59,14 @@ public class Player {
 		backpack.addItem("Klondike Bar");
 		backpack.addItem("Big tiddy goth GF");
 		backpack.addItem("Sippy Cup");
+		
+		backpack.addItem("A Big Boy's Sword");
+		backpack.addItem("Red Copper Pan");
+		backpack.addItem("Broken Helmet");
+		backpack.addItem("Bloodied Tunic");
+		backpack.addItem("Muddy Pants");
+		backpack.addItem("Torn Gloves");
+		backpack.addItem("Worn Boot");
 		
 	}
 
@@ -198,7 +215,6 @@ public class Player {
 		this.backpack = backpack;
 	}
 
-/*
 	public Equipment[] getEquipped() {
 		return equipped;
 	}
@@ -206,6 +222,6 @@ public class Player {
 
 	public void setEquipped(Equipment[] equipped) {
 		this.equipped = equipped;
-	}*/
+	}
 	
 }

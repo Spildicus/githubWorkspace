@@ -2,15 +2,14 @@ package items;
 
 public class Item {
 	//item's name -kb
-	private String name;
+	protected String name;
 	//item's selling value -kb
-	private int worth;
+	protected int worth;
 	//description of item -kb
-	private String description; 
+	protected String description; 
 	//type of item
-	private String type;
+	protected String type;
 	
-	//dummy item -kb
 	Item(String name, int worth, String description, String type){
 		this.name = name;
 		this.worth = worth;
