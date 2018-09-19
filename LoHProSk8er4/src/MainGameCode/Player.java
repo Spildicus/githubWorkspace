@@ -48,6 +48,8 @@ public class Player {
 		
 		backpack.addItem("Polar Pop");
 		backpack.addItem("Klondike Bar");
+		backpack.addItem("Big tiddy goth GF");
+		backpack.addItem("Sippy Cup");
 		
 	}
 

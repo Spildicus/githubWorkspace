@@ -25,12 +25,12 @@ public class ItemCollection {
 		 */
 		
 		//CONSUMABLES
-		itemCollections.add(new Item("Polar Pop", 1, "Do you ever drink water?"));
-		itemCollections.add(new Item("Klondike Bar", 20, "What would you do for this?"));
-		itemCollections.add(new Item("Big tiddy goth GF", 666, "Vore."));
+		itemCollections.add(new Item("Polar Pop", 1, "Do you ever drink water?", "Consumable"));
+		itemCollections.add(new Item("Klondike Bar", 20, "What would you do for this?", "Consumable"));
+		itemCollections.add(new Item("Big tiddy goth GF", 666, "Vore.", "Consumable"));
 		
 		//MISC, i.e. NO STATUS EFFECT
-		itemCollections.add(new Item("Sippy Cup", 9, "Somebody otta get their child their sippy cup back."));
+		itemCollections.add(new Item("Sippy Cup", 9, "Somebody otta get their child their sippy cup back.", "Misc"));
 
 	}
 	

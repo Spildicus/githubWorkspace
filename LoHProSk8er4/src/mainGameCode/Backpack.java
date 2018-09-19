@@ -74,7 +74,8 @@ public class Backpack {
 		if(selection <= misc.size() && selection > 0)
 		{
 			itemCollection.useItem(misc.get(selection-1));
-			removeItem(selection-1);
+			//if the item was a consumable, delete it from inventory
+			if(misc.get(selection-1).getType() == "Consumable") removeItem(selection-1);
 		}
 		else
 			TextHandler.displayText("invalid input");
