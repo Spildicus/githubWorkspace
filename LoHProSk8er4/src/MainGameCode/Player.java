@@ -1,7 +1,6 @@
 package mainGameCode;
 
 import items.Equipment;
-import items.ItemCollection;
 
 public class Player {
 
@@ -42,7 +41,7 @@ public class Player {
 	public Player(String name){ //dummy character -kb	
 		
 		this.setName(name);
-		setLevel(1);
+		addLevel();
 		setXp(0);
 		setMaxXp(100);
 		setHealth(20);
@@ -81,14 +80,6 @@ public class Player {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getLevel() {
-		return level;
-	}
-
-	public void setLevel(int level) {
-		this.level = level;
 	}
 
 	public int getDefense() {
@@ -235,4 +226,35 @@ public class Player {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
+	
+	public void checkForLevelUp()
+	{
+		/*TODO: check if player XP >= maxXP, if so, increase level by one and set the maxXP to the new value
+		 * 
+		 * TIPS: 
+		 *  - use an algorithm with level as your 'x' variable
+		 *  - when increasing level by one, call the method addLevel(); (This is where you will actually gain a level
+		 * 	  and go to some sort of 'congratulations' menu. You can decide what happens though.
+		 */
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public void addLevel() 
+	{
+		//TODO: increase level by one, show menu of some sort (ill show you how later)
+		//		and increase stats by whatever amount you specify.
+	}
+	
+	/*TODO: Something we should do is create a separate class for handling the player's stats.
+	 * 		This is because doing it all in the player class is cumbersome and it takes alot
+	 * 		of space, especially since we need to do more in here. An easy way to solve this would
+	 * 		be to make it it's own object that the player will 'own'.
+	 * 
+	 * To start off, I have made a new Stats class. More info on there.
+	 * 
+	 */
+
 }
