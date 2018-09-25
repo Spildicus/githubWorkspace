@@ -29,10 +29,12 @@ public class GameController {
 	public void update()
 	{
 		
+		if(player != null) player.updateStats();
+		
 		menus.getFirst().update();
 		
 	}
-	
+
 	//used when you want to exit a menu and replace it with a new one
 	public static void pollMenu(Menu m)
 	{

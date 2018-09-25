@@ -1,6 +1,5 @@
 package mainGameCode;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class InputHandler {
 
@@ -15,21 +14,11 @@ public class InputHandler {
 	
 	public static int getIntegerInput()
 	{
-		boolean success = false;
-		int input = -1;
+		int input;
 		
-		while(!success)
-		{
-			try
-			{
-				input = in.nextInt();
-				success = true;
-			}
-			catch (InputMismatchException e)
-			{
-				TextHandler.displayText("invalid input");
-			}
-		}
+		while(!in.hasNextInt())
+			in.next();
+		input = in.nextInt();
 		
 		return input;
 	}

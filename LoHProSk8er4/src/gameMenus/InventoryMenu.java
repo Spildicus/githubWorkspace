@@ -30,12 +30,14 @@ public class InventoryMenu extends Menu{
 	
 	public void update()
 	{
+		//used to label available selections
+		int counter = 1;
+		
 		if(pageNum == 0)
 		{
 			setTitle("Inventory - Misc");
 			displayTitle();
 			
-			int counter = 1;
 			for (Item i : misc)
 			{
 				if(counter % 2 != 0)
@@ -45,21 +47,46 @@ public class InventoryMenu extends Menu{
 				counter++;
 			}
 			
-			TextHandler.displayText("\n(" + counter + ") Back\n");
-			
-			int selection = InputHandler.getIntegerInput();
-			
-			if(selection == counter)
-				GameController.exitMenu();
-			else
-				player.getBackpack().useItem(selection);
-			
-			//check if the player input a number that's displayed on the list
+			TextHandler.displayText("\n(" + counter + ") Exit Inventory\t(" + ++counter + ") Next Page\n");
 			
 		}
 		
+		else if(pageNum == 1)
+		{
+			setTitle("Inventory - Equipment");
+			displayTitle();
+
+			for (Item i : equipment)
+			{
+				if(counter % 2 != 0)
+					TextHandler.displayText("(" + counter + ") " + i.getName() + "\t");
+				else
+					TextHandler.displayText("(" + counter + ") " + i.getName() + "\n");
+				counter++;
+			}
+			
+			TextHandler.displayText("\n(" + counter + ") Exit Inventory\t(" + ++counter + ") Next Page\n");
+			
+		}
 		
+		int selection = InputHandler.getIntegerInput();
 		
+		//if selection was exit inventory button
+		if(selection == counter-1)
+		{
+			GameController.exitMenu();
+		}
+		//else if the selection was the next button
+		else if(selection == counter)
+		{
+			if(pageNum == 0) pageNum = 1;
+			else pageNum = 0;
+		}
+		else
+		{
+			if(pageNum == 0) player.getBackpack().useItem(selection);
+			else player.getBackpack().equipItem(selection);
+		}
 	}
 	
 }
