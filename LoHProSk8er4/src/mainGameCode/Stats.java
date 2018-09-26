@@ -17,6 +17,7 @@ public class Stats {
 	 * 		 Create an extra variable for each stat called base<statHere> and set those
 	 * 		 in the constructor.
 	 * 
+	 * 
 	 */
 	
 }

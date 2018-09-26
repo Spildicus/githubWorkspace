@@ -36,7 +36,6 @@ public class Player {
 			new Equipment("EMPTY", 0, "", "FEET", 0, 0, 0, 0, 0, 0),
 			new Equipment("EMPTY", 0, "", "WEAPON", 0, 0, 0, 0, 0, 0),
 			new Equipment("EMPTY", 0, "", "OFFHAND", 0, 0, 0, 0, 0, 0)};
-	 
 
 	public Player(String name){ //dummy character -kb	
 		
@@ -117,6 +116,15 @@ public class Player {
 	public void addHealth(int add) {
 		if(health + add >= maxHealth) health = maxHealth;
 		else health += add;
+	}
+	
+	public void deductHealth(int dmgDealt) {
+		if(health - dmgDealt <= 0)
+		{
+			health = 0;
+			GameController.executeGameOver();
+		}
+		else health -= dmgDealt;
 	}
 
 	public int getMaxHealth() {
@@ -247,6 +255,7 @@ public class Player {
 		//TODO: increase level by one, show menu of some sort (ill show you how later)
 		//		and increase stats by whatever amount you specify.
 	}
+
 	
 	/*TODO: Something we should do is create a separate class for handling the player's stats.
 	 * 		This is because doing it all in the player class is cumbersome and it takes alot

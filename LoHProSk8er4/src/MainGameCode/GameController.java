@@ -1,6 +1,7 @@
 package mainGameCode;
 import java.util.LinkedList;
 
+import gameMenus.GameOverMenu;
 import gameMenus.MainMenu;
 import gameMenus.Menu;
 
@@ -79,6 +80,14 @@ public class GameController {
 
 	public static void setLayer(int layer) {
 		GameController.layer = layer;
+	}
+
+	public static void executeGameOver() {
+		
+		addMenu(new GameOverMenu());
+		
+		for(int i = 1; i < menus.size(); i++)
+			menus.remove(i);
 	}
 	
 }

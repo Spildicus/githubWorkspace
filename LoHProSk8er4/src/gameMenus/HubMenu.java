@@ -1,5 +1,6 @@
 package gameMenus;
 
+import mainGameCode.Enemy;
 import mainGameCode.GameController;
 import mainGameCode.InputHandler;
 import mainGameCode.Player;
@@ -27,7 +28,7 @@ public class HubMenu extends Menu{
 		displayTitle();
 		TextHandler.createNewList(new String[] {"Continue Journey", "Inventory", "Status", "Save and Exit"});
 		setPlayerInput(InputHandler.getInput());
-		if(getPlayerInput().contains("1")); //continue journey, or advance through quest
+		if(getPlayerInput().contains("1")) GameController.addMenu(new FightMenu(new Enemy("Papa", 8, 350, 16), player)); //test fight scene
 		if(getPlayerInput().contains("2")) GameController.addMenu(new InventoryMenu());; //open inventory menu
 		if(getPlayerInput().contains("3")) GameController.addMenu(new StatusMenu()); //check character status
 		if(getPlayerInput().contains("4")) saveAndExit(); //save and exit game
